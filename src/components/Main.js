@@ -32,29 +32,30 @@ const Main = ({ selectedPunk, punkListData }) => {
           <div className="punkContainer">
             <img className="selectedPunk" src={activePunk.image_url} alt="" />
           </div>
-        </div>
 
-        <div className="punkDetails" style={{ color: "#fff" }}>
-          <div className="title">{activePunk.name}</div>
-          <span className="itemNumber">•#{activePunk.token_id}</span>
-        </div>
-        <div className="owner">
-          <div className="ownerImageContainer">
-            <img src={activePunk.owner.profile_img_url} alt="" />
+          <div className="punkDetails" style={{ color: "#fff" }}>
+            <div className="title">{activePunk.name}</div>
+            <span className="itemNumber">•#{activePunk.token_id}</span>
           </div>
-          <div className="ownerDetails">
-            <div className="ownerNameAndHandle">
-              <div>{activePunk.asset_contract.address}</div>
-              <div className="ownerHandle">@ayush</div>
+          <div className="owner">
+            <div className="ownerImageContainer">
+              <img src={activePunk.owner.profile_img_url} alt="" />
             </div>
-            <div className="ownerLink">
-              <img src={instagramLogo} alt="" />
-            </div>
-            <div className="ownerLink">
-              <img src={twitterLogo} alt="" />
-            </div>
-            <div className="ownerLink">
-              <img src={moreIcon} alt="" />
+            <div className="ownerDetails">
+              <div className="ownerNameAndHandle">
+                <div>{activePunk.asset_contract.address}</div>
+                <div className="ownerHandle">@ayush</div>
+              </div>
+
+              <div className="ownerLink">
+                <img src={instagramLogo} alt="" />
+              </div>
+              <div className="ownerLink">
+                <img src={twitterLogo} alt="" />
+              </div>
+              <div className="ownerLink">
+                <img src={moreIcon} alt="" />
+              </div>
             </div>
           </div>
         </div>

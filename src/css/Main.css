@@ -12,8 +12,8 @@
 .punkHighlight {
   flex: 0.25;
   display: flex;
-  align-items: center;
   justify-content: center;
+  flex: 1;
 }
 
 .punkContainer {
@@ -30,25 +30,26 @@
 }
 
 .punkDetails {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 0.75;
+  flex-direction: row;
+
+  flex: 1;
 }
 
 .title {
-  font-size: 70px;
-  font-weight: 600;
+  font-size: 86px;
+  font-weight: 800;
 }
 
 .itemNumber {
   color: #a1a5b0;
-  font-size: 72px;
-  align-self: center;
+  font-size: 86px;
+
+  font-weight: 700;
 }
 
 .owner {
   display: flex;
+  flex-direction: row;
   margin: 10px 0;
   height: 50px;
 }
@@ -83,8 +84,6 @@
 }
 .ownerHandle {
   color: #00ebfe;
-  align-items: center;
-  justify-content: center;
 }
 
 .ownerLink {

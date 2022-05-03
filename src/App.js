@@ -9,7 +9,7 @@ import Main from "./components/Main";
 
 function App() {
   const [punkListData, setPunkListData] = useState([]);
-  const [selectedPunk, setSelectedPunk] = useState(1);
+  const [selectedPunk, setSelectedPunk] = useState(0);
 
   const API_URL = `https://testnets-api.opensea.io/assets?asset_contract_address=0xb80409A31B53d3EF54dD9900eA84980cA2BE5eB5&order_direction=asc`;
 
@@ -28,7 +28,7 @@ function App() {
         </>
       )}
 
-      <PunkList punkListData={punkListData} selectedPunk={selectedPunk} />
+      <PunkList punkListData={punkListData} setSelectedPunk={setSelectedPunk} />
     </div>
   );
 }

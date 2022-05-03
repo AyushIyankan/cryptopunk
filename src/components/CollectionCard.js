@@ -4,9 +4,9 @@ import weth from "../assets/img/weth.png";
 
 import "../css/CollectionCard.css";
 
-function CollectionCard({ id, name, traits, image_url, onClick }) {
+function CollectionCard({ id, name, traits, image_url }) {
   return (
-    <div className="collectionCard" onClick={onClick}>
+    <div className="collectionCard">
       <img src={image_url} alt={name} />
       <div className="details">
         <div className="name">{name}</div>
