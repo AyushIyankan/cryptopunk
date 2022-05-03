@@ -4,33 +4,31 @@ import axios from "axios";
 
 import Header from "./components/Header";
 import CollectionCard from "./components/CollectionCard";
+import PunkList from "./components/PunkList";
+import Main from "./components/Main";
 
 function App() {
   const [punkListData, setPunkListData] = useState([]);
+  const [selectedPunk, setSelectedPunk] = useState(1);
 
-  useEffect(async () => {
-    const openseaData = await axios.get(
-      "https://testnets-api.opensea.io/assets?asset_contract_address=0x2ee405DDAb9Be3DC3ce2457E224F0362396A4239&order_direction=asc"
-    );
+  const API_URL = `https://testnets-api.opensea.io/assets?asset_contract_address=0xb80409A31B53d3EF54dD9900eA84980cA2BE5eB5&order_direction=asc`;
 
-    console.log(openseaData.data.assets);
+  useEffect(() => {
+    fetch(API_URL)
+      .then((res) => res.json())
+      .then((data) => setPunkListData(data.assets));
   }, []);
 
   return (
     <div className="app">
       <Header />
-      <CollectionCard
-        id={0}
-        name={"BandanaPunk"}
-        traits={[
-          {
-            value: 8,
-          },
-        ]}
-        image={
-          "https://ipfs.thirdweb.com/ipfs/QmX5KmDnfBdHQhmCSnqsb4yp3dyHcY6dzd2f7L9NEgATtQ/0.jpg"
-        }
-      />
+      {punkListData.length > 0 && (
+        <>
+          <Main selectedPunk={selectedPunk} punkListData={punkListData} />
+        </>
+      )}
+
+      <PunkList punkListData={punkListData} selectedPunk={selectedPunk} />
     </div>
   );
 }
